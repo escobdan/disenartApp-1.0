@@ -201,7 +201,7 @@ clientDeletedFlushbar(BuildContext context){
     padding: EdgeInsets.all(15),
     messageText: Center(child: Text('Cliente eliminado', style: TextStyle(fontSize: 20, color: Colors.grey[300]),)),
     borderRadius: 8,
-    duration: Duration(seconds: 2),
+    duration: Duration(milliseconds: 1500),
   ).show(context);
 }
 itemDeletedFlushbar(BuildContext context){
@@ -209,6 +209,6 @@ itemDeletedFlushbar(BuildContext context){
     padding: EdgeInsets.all(15),
     messageText: Center(child: Text('Artículo eliminado', style: TextStyle(fontSize: 20, color: Colors.grey[300]),)),
     borderRadius: 8,
-    duration: Duration(seconds: 2),
+    duration: Duration(milliseconds: 1500),
   ).show(context);
 }
