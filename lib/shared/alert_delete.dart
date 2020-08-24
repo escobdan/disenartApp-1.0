@@ -196,6 +196,7 @@ alertDeleteClient(BuildContext context){
     },
   );
 }
+
 clientDeletedFlushbar(BuildContext context){
   return Flushbar(
     padding: EdgeInsets.all(15),

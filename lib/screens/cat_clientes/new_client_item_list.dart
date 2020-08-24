@@ -125,7 +125,7 @@ class _NewClientItemListState extends State<NewClientItemList> {
                                         '${c_item_name}',
                                         style: TextStyle(
                                           color: Colors.white,
-                                          fontSize: 26,
+                                          fontSize: 22,
                                           fontWeight: FontWeight.bold,
                                         ),
                                       ),
@@ -467,19 +467,18 @@ class _NewClientItemListState extends State<NewClientItemList> {
       );
     }
 
-    gettingItemID(context) async {
-      await SearchService()
-          .searchByFullItemName(c_item_name)
-          .then((QuerySnapshot docs) {
-        setState(() {
-          searchClientItem_id = docs.documents[0].documentID;
-          print(
-              'item id from click: $searchClientItem_id with item name: $c_item_name');
-        });
-      });
-    }
+//    gettingItemID(context) async {
+//      await SearchService()
+//          .searchByFullItemName(c_item_name)
+//          .then((QuerySnapshot docs) {
+//        setState(() {
+//          searchClientItem_id = docs.documents[0].documentID;
+//          print(
+//              'item id from click: $searchClientItem_id with item name: $c_item_name');
+//        });
+//      });
+//    }
 
-//add for next update?
     Widget _buildClientItemListSearch(document) {
       return StatefulBuilder(
         builder: (BuildContext context, StateSetter setState) {
@@ -542,8 +541,14 @@ class _NewClientItemListState extends State<NewClientItemList> {
                 ),
               ),
               onTap: () async {
+//                await setState(() {
+//                    c_item_name = document['iname'];
+//                    print('id before change: $c_item_id');
+//                    gettingItemID(context);
+//                  });
+//                  await Future.delayed(Duration(milliseconds: 500));
+//                  print('timer done');
                 setState(() {
-                  c_item_id = document.documentID;
                   c_item_name = document['iname'];
                   original_price_string = document['price'];
                   c_item_imageurl = document['imageurl'];

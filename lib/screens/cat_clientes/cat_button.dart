@@ -94,7 +94,7 @@ class _CatButtonState extends State<CatButton> {
                                   !searchingitem?'Artículos Disponibles':'Búsqueda de Artículos Disponibles',
                                   style: TextStyle(
                                     color: Colors.white,
-                                    fontSize: 26,
+                                    fontSize: 24,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),

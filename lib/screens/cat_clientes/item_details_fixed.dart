@@ -29,7 +29,7 @@ class ItemDetails extends StatelessWidget {
                   child: ListTile(
                     title: Text(
                       '$currentDate',
-                      style: TextStyle(color: Colors.black, fontSize: 18),
+                      style: TextStyle(color: Colors.black, fontSize: 16),
                     ),
                   ),
                 ),
@@ -42,7 +42,7 @@ class ItemDetails extends StatelessWidget {
                   child: ListTile(
                     title: Text(
                       '\$${numFormatter.format(currentPrice)}.00',
-                      style: TextStyle(color: Colors.black, fontSize: 18),
+                      style: TextStyle(color: Colors.black, fontSize: 16),
                     ),
                   ),
                 ),
@@ -55,7 +55,7 @@ class ItemDetails extends StatelessWidget {
                   child: ListTile(
                     title: Text(
                       '${numFormatter.format(currentCant)}',
-                      style: TextStyle(color: Colors.black, fontSize: 18),
+                      style: TextStyle(color: Colors.black, fontSize: 16),
                     ),
                   ),
                 ),
@@ -68,7 +68,7 @@ class ItemDetails extends StatelessWidget {
                   child: ListTile(
                     title: Text(
                       '\$${numFormatter.format(currentTotal)}.00',
-                      style: TextStyle(color: Colors.black, fontSize: 18),
+                      style: TextStyle(color: Colors.black, fontSize: 16),
                     ),
                   ),
                 ),

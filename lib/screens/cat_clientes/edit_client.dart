@@ -134,13 +134,23 @@ class _EditClientState extends State<EditClient> {
                   ),
                   onPressed: () async {
                     if (_formKey.currentState.validate()) {
-                      client_phone = _clphonenoformat==null&&_clphonelada==null?client_phone:'($_clphonelada) ${_clphonenoformat.substring(0, 3)}-${_clphonenoformat.substring(3)}';
+                      if(_clphonenoformat==null){
+                        if(_clphonelada==null){
+                          print('same phone, no changes');
+                        } else {
+                          client_phone = '($_clphonelada) ${client_phone.substring(6,9)}-${client_phone.substring(10)}';
+                        }
+                      } else {
+                        client_phone = '($_clphonelada) ${_clphonenoformat.substring(0, 3)}-${_clphonenoformat.substring(3)}';
+                      }
+                      print(client_phone);
                       await clientCollection.document(client_id).updateData({
                         'name': '$client_name',
                         'phone': '$client_phone',
                         'email': '$client_email',
                         'searchKey': '${client_name[0]}'
                       });
+                      clientcontroller.add(client_name);
                       Navigator.pop(context);
                       alertSaveClient(context);
                     }

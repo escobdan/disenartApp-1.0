@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:disenart/services/database.dart';
 import 'package:disenart/shared/alert_save.dart';
 import 'package:disenart/shared/constants.dart';
+import 'package:disenart/shared/loading.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +23,7 @@ class _NewItemState extends State<NewItem> {
   String itname;
   String itprice;
   String error = '';
-  bool alertclosed = false;
+  bool loading = false;
   final focus = FocusNode();
   final focus2 = FocusNode();
   File image;
@@ -86,8 +87,18 @@ class _NewItemState extends State<NewItem> {
 //        });
 //      });
 //    }
-
-    return Padding(
+    return loading?ClipPath(
+      clipper: ShapeBorderClipper(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(bottom: Radius.circular(20)),
+        ),
+      ),
+      child: Container(
+        width: double.infinity,
+        height: 450.0,
+        child: Loading(),
+      ),
+    ):Padding(
       padding: const EdgeInsets.only(top: 20.0, right: 50.0, left: 50.0),
       child: Form(
         key: _formKey,
@@ -197,6 +208,9 @@ class _NewItemState extends State<NewItem> {
               ),
               onPressed: () async {
                 if (_formKey.currentState.validate()) {
+                  setState(() {
+                    loading = true;
+                  });
                   await uploadFile(context);
                   await itemCollection.add({
                     'iname': itname,

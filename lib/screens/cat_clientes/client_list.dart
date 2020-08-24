@@ -10,8 +10,6 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/rendering.dart';
 
-//TODO add DateFormat("yyyy-MM-dd").format(DateTime.now()) to see when item was added
-
 class ClientList extends StatefulWidget {
   @override
   _ClientListState createState() => _ClientListState();
@@ -49,7 +47,7 @@ class _ClientListState extends State<ClientList> {
           print(
               '$client_name, $client_phone, $client_id, $client_email, $ci_list');
         });
-        return alertDeleteClient(context);
+        return  alertDeleteClient(context);
       },
       background: Padding(
         padding: const EdgeInsets.all(6.0),

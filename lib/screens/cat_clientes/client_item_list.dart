@@ -87,7 +87,7 @@ class _ClientItemListState extends State<ClientItemList> {
                                 'Ventas de $c_item_name a $client_name',
                                 style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 26,
+                                  fontSize: 22,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),

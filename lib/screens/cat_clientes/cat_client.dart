@@ -107,7 +107,7 @@ class _Cat_ClientState extends State<Cat_Client> {
                                   'Registra nuevo cliente',
                                   style: TextStyle(
                                     color: Colors.white,
-                                    fontSize: 26,
+                                    fontSize: 22,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),

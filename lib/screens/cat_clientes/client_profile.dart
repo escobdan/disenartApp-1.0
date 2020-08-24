@@ -64,10 +64,10 @@ _showEditClientPanel(context) {
                               flex: 3,
                               child: Center(
                                 child: Text(
-                                  'Registra nuevo cliente',
+                                  'Editar cliente',
                                   style: TextStyle(
                                     color: Colors.white,
-                                    fontSize: 26,
+                                    fontSize: 22,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
@@ -113,7 +113,7 @@ _showEditClientPanel(context) {
                     radius: 30,
                     backgroundColor: CompanyColors.PrimaryAssentColor,
                     child: Text(
-                      'DE',
+                      '${client_name.substring(0,1)}',
                       textScaleFactor: 1.5,
                       style: TextStyle(color: Colors.white),
                     ),
@@ -136,9 +136,7 @@ _showEditClientPanel(context) {
                           iconSize:
                               (orientation == Orientation.landscape) ? 26 : 24,
                           icon: Icon(Icons.edit),
-                          //TODO make edit client form
                           onPressed: (){
-//                            printUrl();
                           _showEditClientPanel(context);
                           },
                         )
@@ -178,8 +176,7 @@ _showEditClientPanel(context) {
                             letterSpacing: 1),
                       ),
                       SizedBox(
-                        width:
-                            (orientation == Orientation.landscape) ? 260 : 180,
+                        width: 100.0,
                       ),
                       Switch(
                         activeColor: CompanyColors.PrimaryAssentColor,
