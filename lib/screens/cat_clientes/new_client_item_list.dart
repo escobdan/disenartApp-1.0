@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:disenart/screens/cat_clientes/cat_button.dart';
 import 'package:disenart/screens/cat_clientes/client_list.dart';
+import 'package:disenart/screens/home/item_list.dart';
 import 'package:disenart/services/database.dart';
 import 'package:disenart/services/search.dart';
 import 'package:disenart/shared/alert_save.dart';
@@ -311,8 +312,8 @@ class _NewClientItemListState extends State<NewClientItemList> {
                                 ),
                                 onPressed: () async {
                                   if (_formKey.currentState.validate()) {
-                                    price_changed == true
-                                        ? print('price changed')
+                                    c_item_price==null
+                                        ? c_item_price = int.parse(item_price.substring(1,item_price.length-3))
                                         : c_item_price = original_price;
                                     c_item_timestamp =
                                         Timestamp.fromDate(selectedDate);

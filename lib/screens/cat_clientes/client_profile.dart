@@ -1,7 +1,7 @@
 import 'package:disenart/screens/cat_clientes/client_item_list.dart';
 import 'package:disenart/screens/cat_clientes/client_list.dart';
 import 'package:disenart/screens/cat_clientes/edit_client.dart';
-import 'package:disenart/screens/cat_clientes/test_panel.dart';
+import 'package:disenart/screens/cat_clientes/new_client_item_list.dart';
 import 'package:disenart/shared/constants.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
@@ -113,7 +113,7 @@ _showEditClientPanel(context) {
                     radius: 30,
                     backgroundColor: CompanyColors.PrimaryAssentColor,
                     child: Text(
-                      '${client_name.substring(0,1)}',
+                      client_name==null?'':'${client_name.substring(0,1)}',
                       textScaleFactor: 1.5,
                       style: TextStyle(color: Colors.white),
                     ),
